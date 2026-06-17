@@ -1,0 +1,111 @@
+---
+const highlights = [
+  {
+    title: "Raíces castellanas",
+    description: "Un municipio ligado a la tierra, al trabajo y a la vida tradicional de la comarca.",
+    icon: "roots",
+  },
+  {
+    title: "Patrimonio local",
+    description: "Espacios, edificios y rincones que forman parte de la memoria colectiva del pueblo.",
+    icon: "heritage",
+  },
+  {
+    title: "Tradición vecinal",
+    description: "Fiestas, costumbres y celebraciones que siguen uniendo a distintas generaciones.",
+    icon: "community",
+  },
+];
+---
+
+<section class="relative overflow-hidden bg-[#FFFCF7] py-16 sm:py-20 lg:py-24">
+  <div class="absolute right-0 top-0 h-[420px] w-[420px] rounded-full bg-[#B9863B]/8 blur-3xl" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-0 h-[360px] w-[360px] rounded-full bg-[#071D3A]/5 blur-3xl" aria-hidden="true"></div>
+
+  <div class="relative mx-auto grid max-w-[1600px] gap-10 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-14 lg:px-10 xl:gap-16 xl:px-16">
+    <div class="max-w-[690px]">
+      <p class="text-[14px] font-bold uppercase tracking-[0.18em] text-[#B9863B]">
+        Nuestra historia
+      </p>
+      <h2 class="mt-3 font-serif text-[clamp(2.6rem,10vw,4.1rem)] font-medium leading-[0.98] tracking-normal text-[#071D3A] lg:text-[clamp(4rem,5vw,5.7rem)]">
+        Quismondo, memoria viva de La Sagra
+      </h2>
+      <div class="mt-6 flex items-center gap-4 text-[#B9863B]" aria-hidden="true">
+        <span class="h-px w-28 bg-current"></span>
+        <img src="/escudo.png" alt="" class="h-8 w-auto object-contain" width="330" height="585" />
+        <span class="h-px w-16 bg-current"></span>
+      </div>
+
+      <p class="mt-7 max-w-[620px] text-[20px] font-semibold leading-[1.55] text-[#071D3A]">
+        Entre campos castellanos, tradiciones populares y vida vecinal, Quismondo conserva una identidad propia que ha pasado de generación en generación.
+      </p>
+      <p class="mt-5 max-w-[620px] text-[17px] font-medium leading-[1.65] text-[#071D3A]/72">
+        Su historia se entiende a través de sus calles, su iglesia, sus fiestas y la participación de sus vecinos, que han mantenido vivo el carácter cercano y acogedor del municipio.
+      </p>
+
+      <a
+        href="#"
+        class="mt-8 inline-flex h-14 w-full items-center justify-center gap-3 rounded-[8px] bg-[#071D3A] px-6 text-[16px] font-bold text-white shadow-[0_16px_32px_rgba(7,29,58,0.16)] outline-none transition hover:bg-[#0b2c57] focus-visible:ring-2 focus-visible:ring-[#B9863B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FFFCF7] sm:w-auto"
+      >
+        Conocer la historia
+        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M7 4.5 12.5 10 7 15.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="rounded-[2rem] border border-[#071D3A]/10 bg-white/80 p-5 shadow-[0_24px_80px_rgba(7,29,58,0.08)] backdrop-blur-sm sm:p-7 lg:p-8">
+      <div class="flex items-center justify-between gap-5 border-b border-[#071D3A]/10 pb-6">
+        <div>
+          <p class="text-[13px] font-bold uppercase tracking-[0.18em] text-[#B9863B]">
+            Memoria local
+          </p>
+          <p class="mt-2 text-[24px] font-bold leading-tight text-[#071D3A]">
+            Identidad que permanece
+          </p>
+        </div>
+        <span class="hidden h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#B9863B]/10 text-[#B9863B] sm:flex" aria-hidden="true">
+          <svg class="h-9 w-9" viewBox="0 0 36 36" fill="none">
+            <path d="M18 5v26M9 12h18M10 31h16M11 12 6 21h10l-5-9ZM25 12l-5 9h10l-5-9Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </div>
+
+      <ul class="divide-y divide-[#071D3A]/10">
+        {
+          highlights.map((item) => (
+            <li class="group flex gap-5 py-6 first:pt-7 last:pb-1">
+              <span class="flex h-13 w-13 shrink-0 items-center justify-center rounded-[8px] bg-[#B9863B]/10 text-[#B9863B] transition-colors group-hover:bg-[#B9863B] group-hover:text-white" aria-hidden="true">
+                {item.icon === "roots" && (
+                  <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 5v16M16 21c-4-2-7-5.5-7-10 4.3 0 7 2.7 7 7M16 21c4-2 7-5.5 7-10-4.3 0-7 2.7-7 7M16 21v6M10 27c2.5-3.2 4.5-4.2 6-4.2S19.5 23.8 22 27" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                )}
+                {item.icon === "heritage" && (
+                  <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none">
+                    <path d="M6 27h20M8 27V14l8-7 8 7v13M12 27v-7a4 4 0 0 1 8 0v7M13 14h6M16 7V4M13.5 5.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                )}
+                {item.icon === "community" && (
+                  <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 27s-9-5.4-9-12.4c0-3.2 2.3-5.3 5.1-5.3 1.7 0 3.1.9 3.9 2.2.8-1.3 2.2-2.2 3.9-2.2 2.8 0 5.1 2.1 5.1 5.3C25 21.6 16 27 16 27Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7 8.5a3.5 3.5 0 0 1 5-3.2M25 8.5a3.5 3.5 0 0 0-5-3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  </svg>
+                )}
+              </span>
+
+              <div>
+                <h3 class="text-[21px] font-bold leading-tight text-[#071D3A]">
+                  {item.title}
+                </h3>
+                <p class="mt-2 text-[16px] font-medium leading-[1.55] text-[#071D3A]/68">
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
