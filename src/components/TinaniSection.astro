@@ -1,0 +1,133 @@
+---
+const highlights = [
+  {
+    title: "Domingo de Resurrección",
+    description: "La tradición se celebra cada año en una jornada marcada por la emoción y la participación del pueblo.",
+    icon: "calendar",
+  },
+  {
+    title: "El Abanderado",
+    description: "Figura encargada de bailar la bandera en honor del Cristo Resucitado.",
+    icon: "flag",
+  },
+  {
+    title: "Música tradicional",
+    description: "Dulzaina castellana y tambor acompañan las ceremonias, reverencias y danzas.",
+    icon: "music",
+  },
+  {
+    title: "Personajes del Tinani",
+    description: "Alcalde, Mochiller y Alabarderos completan una tradición llena de símbolos.",
+    icon: "people",
+  },
+];
+---
+
+<section class="bg-[#F8F5EF] py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-10 xl:px-16">
+    <div class="grid items-center gap-8 xl:grid-cols-[1.08fr_0.92fr] xl:gap-0">
+      <div class="relative min-h-[430px] overflow-hidden rounded-[2rem] shadow-[0_30px_90px_rgba(7,29,58,0.16)] sm:min-h-[520px] xl:min-h-[620px]">
+        <img
+          src="/tinani.png"
+          alt="Tradición del Tinani en Quismondo"
+          class="absolute inset-0 h-full w-full object-cover object-center"
+          width="1200"
+          height="900"
+        />
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,29,58,0)_38%,rgba(7,29,58,0.72)_100%)]"></div>
+        <div class="absolute left-5 right-5 bottom-5 rounded-[1.25rem] border border-white/15 bg-[#071D3A]/72 p-5 text-white shadow-[0_20px_50px_rgba(7,29,58,0.22)] backdrop-blur-sm sm:left-7 sm:right-auto sm:bottom-7 sm:max-w-[430px] sm:p-6">
+          <p class="text-[13px] font-bold uppercase tracking-[0.18em] text-[#F3D59B]">
+            Tradición de Quismondo
+          </p>
+          <p class="mt-2 text-[28px] font-bold leading-tight">
+            Tierra de Tinani
+          </p>
+          <div class="mt-4 flex h-1 w-32 overflow-hidden rounded-full" aria-hidden="true">
+            <span class="flex-1 bg-[#8B1111]"></span>
+            <span class="flex-1 bg-[#B9863B]"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative rounded-[2rem] border border-[#071D3A]/10 bg-[#FFFCF7] p-6 shadow-[0_24px_80px_rgba(7,29,58,0.10)] sm:p-8 xl:-ml-16 xl:p-10">
+        <div class="absolute top-8 right-0 hidden h-28 w-2 overflow-hidden rounded-l-full xl:block" aria-hidden="true">
+          <span class="block h-1/2 bg-[#8B1111]"></span>
+          <span class="block h-1/2 bg-[#B9863B]"></span>
+        </div>
+
+        <p class="text-[14px] font-bold uppercase tracking-[0.18em] text-[#B9863B]">
+          Tradición viva
+        </p>
+        <h2 class="mt-3 font-serif text-[clamp(2.55rem,10vw,4rem)] font-medium leading-[0.98] tracking-normal text-[#071D3A] lg:text-[clamp(3.8rem,4.6vw,5.4rem)]">
+          Tinani, la bandera que late con Quismondo
+        </h2>
+
+        <p class="mt-6 text-[18px] font-semibold leading-[1.55] text-[#071D3A]">
+          Cada Domingo de Resurrección, Quismondo mantiene viva una de sus tradiciones más queridas: el Tinani, una celebración donde la bandera, la música y sus personajes tradicionales llenan las calles de identidad y memoria.
+        </p>
+        <p class="mt-4 text-[16px] font-medium leading-[1.65] text-[#071D3A]/72">
+          El Abanderado baila la bandera roja y gualda en honor del Cristo Resucitado, acompañado por la dulzaina castellana, el tambor y los personajes que dan forma a esta fiesta popular: el Alcalde, el Mochiller y los Alabarderos.
+        </p>
+
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="#"
+            class="inline-flex h-14 items-center justify-center gap-3 rounded-[8px] bg-[#071D3A] px-6 text-[16px] font-bold text-white shadow-[0_16px_32px_rgba(7,29,58,0.16)] outline-none transition hover:bg-[#0b2c57] focus-visible:ring-2 focus-visible:ring-[#B9863B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FFFCF7]"
+          >
+            Descubrir el Tinani
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M7 4.5 12.5 10 7 15.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="inline-flex h-14 items-center justify-center rounded-[8px] border border-[#B9863B] bg-white/60 px-6 text-[16px] font-bold text-[#071D3A] outline-none transition hover:border-[#071D3A] hover:bg-white focus-visible:ring-2 focus-visible:ring-[#B9863B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FFFCF7]"
+          >
+            Ver fiestas y eventos
+          </a>
+        </div>
+
+        <ul class="mt-8 hidden gap-4 sm:grid sm:grid-cols-2">
+          {
+            highlights.map((item) => (
+              <li class="rounded-[1rem] border border-[#071D3A]/10 bg-white/70 p-4 transition hover:border-[#B9863B]/60 hover:bg-white">
+                <span class="flex h-11 w-11 items-center justify-center rounded-[8px] bg-[#B9863B]/10 text-[#B9863B]" aria-hidden="true">
+                  {item.icon === "calendar" && (
+                    <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none">
+                      <rect x="7" y="8" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8" />
+                      <path d="M11 5v6M21 5v6M7 14h18M12 19h2M18 19h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                  )}
+                  {item.icon === "flag" && (
+                    <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none">
+                      <path d="M9 27V5M10 6h13l-2 5 2 5H10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 27h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                  )}
+                  {item.icon === "music" && (
+                    <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none">
+                      <path d="M20 7v14.5a3.5 3.5 0 1 1-2-3.2V10l8-2v10.5a3.5 3.5 0 1 1-2-3.2V7.5L20 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M8 9c2 1.5 3 3.2 3 5.2S10 18 8 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                  )}
+                  {item.icon === "people" && (
+                    <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none">
+                      <path d="M16 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM8 25c1.2-4.2 4-6.2 8-6.2s6.8 2 8 6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M7.5 16.5a3 3 0 1 0 0-6M24.5 16.5a3 3 0 1 1 0-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                  )}
+                </span>
+                <h3 class="mt-4 text-[18px] font-bold leading-tight text-[#071D3A]">
+                  {item.title}
+                </h3>
+                <p class="mt-2 text-[15px] font-medium leading-[1.5] text-[#071D3A]/68">
+                  {item.description}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
