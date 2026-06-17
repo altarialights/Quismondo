@@ -1,0 +1,256 @@
+---
+const navItems = [
+  { label: "Inicio", href: "/", active: true },
+  {
+    label: "Ayuntamiento",
+    href: "#",
+    children: [
+      { label: "Alcalde", href: "#" },
+      { label: "Corporación municipal", href: "#" },
+      { label: "Gobierno municipal", href: "#" },
+      { label: "Organigrama", href: "#" },
+      { label: "Historia", href: "#" },
+      { label: "Tradiciones", href: "#" },
+      { label: "Asociaciones y Peñas", href: "#" },
+      { label: "Teléfonos de interés", href: "#" },
+      { label: "Contacto", href: "#" },
+    ],
+  },
+  {
+    label: "Solicitudes",
+    href: "#",
+    children: [
+      { label: "Solicitud genérica", href: "#" },
+      { label: "Domiciliación bancaria", href: "#" },
+      { label: "Lectura contador de agua", href: "#" },
+      { label: "Alta contador de agua", href: "#" },
+      { label: "Cambio titular de agua", href: "#" },
+      { label: "Baja contador de agua", href: "#" },
+      { label: "Licencia de obras", href: "#" },
+      { label: "Gestión Padrón municipal", href: "#" },
+    ],
+  },
+  { label: "Noticias", href: "#" },
+  {
+    label: "Transparencia",
+    href: "#",
+    children: [
+      { label: "Ordenanzas", href: "#" },
+      { label: "Plenos", href: "#" },
+      { label: "Comisión de gobierno", href: "#" },
+      { label: "Decretos de Alcaldía", href: "#" },
+      { label: "Bandos Municipales", href: "#" },
+      { label: "Presupuestos", href: "#" },
+      { label: "Perfil del Contratante", href: "#" },
+      { label: "Precios y Tasas vigentes", href: "#" },
+      { label: "Normativa Urbanística", href: "#" },
+    ],
+  },
+  {
+    label: "Eventos",
+    href: "#",
+    children: [
+      { label: "Fiestas y deportes", href: "#" },
+      { label: "IMAD Quismondo", href: "#" },
+      { label: "Asociaciones culturales", href: "#" },
+    ],
+  },
+  { label: "Contacto", href: "#" },
+];
+
+const submenuIdFor = (label: string) =>
+  `mobile-submenu-${label
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")}`;
+---
+
+<header class="relative z-50 border-b border-[#071D3A]/10 bg-[#F8F5EF]/95 backdrop-blur-sm">
+  <div class="mx-auto flex h-24 w-full max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:h-28 lg:px-10 xl:px-16">
+    <a class="flex min-w-0 items-center gap-4 lg:gap-6" href="/" aria-label="Inicio Ayuntamiento de Quismondo">
+      <img
+        src="/escudo.png"
+        alt="Escudo del Ayuntamiento de Quismondo"
+        class="h-[68px] w-auto shrink-0 lg:h-[92px]"
+        width="330"
+        height="585"
+      />
+      <span class="h-16 w-px shrink-0 bg-[#071D3A]/18 lg:h-20"></span>
+      <span class="block min-w-0 leading-none">
+        <span class="block font-serif text-[15px] font-semibold tracking-normal text-[#071D3A] lg:text-[17px]">
+          Ayuntamiento de
+        </span>
+        <span class="mt-1 block whitespace-nowrap font-serif text-[31px] font-medium leading-[0.86] tracking-normal text-[#071D3A] sm:text-[36px] lg:text-[46px]">
+          Quismondo
+        </span>
+        <span class="mt-3 block text-[9px] font-medium uppercase tracking-[0.55em] text-[#071D3A]/45 lg:text-[11px]">
+          Toledo
+        </span>
+      </span>
+    </a>
+
+    <div class="hidden items-center gap-6 2xl:flex 2xl:gap-8">
+      <nav aria-label="Navegación principal">
+        <ul class="flex items-center gap-5 text-[14px] font-semibold text-[#071D3A] xl:gap-8 xl:text-[15px]">
+          {
+            navItems.map((item) => (
+              <li class="group relative">
+                <a
+                  class="relative flex items-center gap-2 py-3 outline-none transition-colors hover:text-[#0b2c57] focus-visible:text-[#0b2c57]"
+                  href={item.href}
+                  aria-haspopup={item.children?.length ? "true" : undefined}
+                >
+                  <span>{item.label}</span>
+                  {item.children?.length ? (
+                    <svg class="mt-0.5 h-3.5 w-3.5 stroke-current transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  ) : null}
+                  {item.active && (
+                    <span class="absolute bottom-1 left-0 h-0.5 w-full rounded-full bg-[#B9863B]" />
+                  )}
+                </a>
+
+                {item.children?.length ? (
+                  <div class="invisible absolute left-0 top-full z-50 mt-3 min-w-[270px] translate-y-2 rounded-xl border border-white/10 bg-[#071D3A] py-3 opacity-0 shadow-xl shadow-[#071D3A]/20 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                    {item.children.map((child) => (
+                      <a
+                        class="block px-5 py-2.5 text-sm font-semibold !text-white outline-none transition-colors hover:!bg-[#0b2c57] hover:!text-white focus-visible:!bg-[#0b2c57] focus-visible:!text-white"
+                        href={child.href}
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <button class="flex h-11 w-11 items-center justify-center rounded-full text-[#071D3A] outline-none transition-colors hover:text-[#0b2c57] focus-visible:ring-2 focus-visible:ring-[#0b2c57] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F8F5EF]" type="button" aria-label="Buscar">
+        <svg class="h-7 w-7" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="12.8" cy="12.8" r="7.8" stroke="currentColor" stroke-width="2" />
+          <path d="m18.6 18.6 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+
+    <button
+      id="mobile-menu-button"
+      class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-[#071D3A] outline-none transition-colors hover:text-[#0b2c57] focus-visible:ring-2 focus-visible:ring-[#0b2c57] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F8F5EF] 2xl:hidden"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="h-9 w-9" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M8 13h24M8 20h24M8 27h24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+      </svg>
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="absolute left-0 right-0 top-full z-50 hidden max-h-[calc(100vh-96px)] overflow-y-auto border-b border-t border-[#071D3A]/10 bg-white px-5 pb-5 shadow-[0_22px_42px_rgba(7,29,58,0.14)] backdrop-blur-md 2xl:hidden"
+    aria-label="Navegación móvil"
+  >
+    <div class="mx-auto flex max-w-[1600px] flex-col py-2 text-[17px] font-semibold text-[#071D3A]">
+      {
+        navItems.map((item) => {
+          const submenuId = submenuIdFor(item.label);
+
+          return (
+            <div class="border-b border-[#071D3A]/10 last:border-b-0">
+              {item.children?.length ? (
+                <>
+                  <button
+                    class="flex w-full items-center justify-between rounded-lg px-3 py-4 text-left text-[#071D3A] outline-none transition-colors hover:bg-[#eef4f8] hover:text-[#0b2c57] focus-visible:bg-[#eef4f8] focus-visible:text-[#0b2c57]"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls={submenuId}
+                    data-mobile-submenu-toggle
+                  >
+                    <span>{item.label}</span>
+                    <svg class="h-4 w-4 stroke-current transition-transform" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M4 6l4 4 4-4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div
+                    id={submenuId}
+                    class="mb-4 hidden rounded-xl border border-[#071D3A]/10 bg-[#071D3A] py-2"
+                    data-mobile-submenu
+                  >
+                    {item.children.map((child) => (
+                      <a class="block px-4 py-2.5 text-[15px] font-semibold !text-white outline-none transition-colors hover:!bg-[#0b2c57] hover:!text-white focus-visible:!bg-[#0b2c57] focus-visible:!text-white" href={child.href}>
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <a class="flex items-center justify-between rounded-lg px-3 py-4 text-[#071D3A] outline-none transition-colors hover:bg-[#eef4f8] hover:text-[#0b2c57] focus-visible:bg-[#eef4f8] focus-visible:text-[#0b2c57]" href={item.href}>
+                  <span>{item.label}</span>
+                </a>
+              )}
+            </div>
+          );
+        })
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const button = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+  const submenuButtons = menu?.querySelectorAll("[data-mobile-submenu-toggle]");
+
+  const closeSubmenus = () => {
+    submenuButtons?.forEach((submenuButton) => {
+      const submenuId = submenuButton.getAttribute("aria-controls");
+      const submenu = submenuId ? document.getElementById(submenuId) : null;
+
+      submenuButton.setAttribute("aria-expanded", "false");
+      submenuButton.querySelector("svg")?.classList.remove("rotate-180");
+      submenu?.classList.add("hidden");
+    });
+  };
+
+  const closeMenu = () => {
+    button?.setAttribute("aria-expanded", "false");
+    button?.setAttribute("aria-label", "Abrir menú");
+    menu?.classList.add("hidden");
+    closeSubmenus();
+  };
+
+  button?.addEventListener("click", () => {
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!isOpen));
+    button.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
+    menu?.classList.toggle("hidden", isOpen);
+
+    if (isOpen) {
+      closeSubmenus();
+    }
+  });
+
+  submenuButtons?.forEach((submenuButton) => {
+    submenuButton.addEventListener("click", () => {
+      const submenuId = submenuButton.getAttribute("aria-controls");
+      const submenu = submenuId ? document.getElementById(submenuId) : null;
+      const isOpen = submenuButton.getAttribute("aria-expanded") === "true";
+
+      submenuButton.setAttribute("aria-expanded", String(!isOpen));
+      submenuButton.querySelector("svg")?.classList.toggle("rotate-180", !isOpen);
+      submenu?.classList.toggle("hidden", isOpen);
+    });
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+</script>

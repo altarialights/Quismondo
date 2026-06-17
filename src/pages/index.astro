@@ -1,17 +1,24 @@
 ---
-
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Ayuntamiento de Quismondo</title>
+    <meta
+      name="description"
+      content="Web oficial del Ayuntamiento de Quismondo, Toledo."
+    />
+  </head>
+  <body class="bg-[#F8F5EF] text-[#071D3A] antialiased">
+    <Header />
+    <main class="overflow-hidden bg-[#F8F5EF]">
+      <Hero />
+    </main>
+  </body>
 </html>
